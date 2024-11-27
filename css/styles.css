@@ -1,0 +1,408 @@
+body {
+	background-color: rgb(245, 244, 244);
+	color: black;
+  font-family: 'Arial, Helvetica', sans-serif !;
+}
+
+
+.jumbotron,
+.card-body,
+.container,
+.site-header {
+  font-family: 'Verdana', serif !important;
+}
+
+
+.jumbotron .display-4 {
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.jumbotron {
+  height: 50vh;
+  padding: 5em inherit;
+  margin-bottom: 0;
+  background-color: #53C0FB;
+  background: url('../img/cover_back-copy.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.jumbotron .lead {
+  font-size: 38px;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.site-header a {
+  color: white;
+  transition: ease-in-out color .15s;
+}
+
+.site-header .dropdown-menu a {
+  color: black;
+}
+
+.dropzone {
+  border: 2px dashed #0087F7;
+  border-radius: 5px;
+  background: white;
+}
+
+.img-fit {
+  max-height: 100%;
+}
+
+.alert {
+  position: fixed;
+  top: 80px;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+}
+
+.cursor-active {
+  cursor: pointer;
+}
+
+.left {
+  float: left;
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+#avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+ }
+ 
+ #profilePicPreview { width: 180px; 
+  height: 180px; 
+  display: none; 
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+#spinner-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  display: none;
+}
+
+main {
+  min-height: calc(100vh - 210px);
+}
+
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.checked {
+  color: orange;
+}
+
+#button-background-index{
+background-color: #e280109c !important;
+}
+/* INICIO ESTILOS GLOBALES NAVBAR */
+
+nav.navbar {
+  background: rgba(53, 73, 125, 1) !important;
+  position: relative !important;
+  display: flex !important;
+  color: #f3e7e7 !important;
+  box-shadow: 0 0.25rem 0.5rem rgba(21, 57, 78, 0.651);
+  padding: 0rem !important;
+
+}
+
+nav.navbar .navbar-nav .nav-link {
+  color: #fffefe !important;
+  padding: 1rem !important;
+}
+
+nav .navbar-nav .nav-link:hover {
+
+  color: #212a47 !important;
+  background-color: #8bb8c0;
+  border-radius: 0.3125rem;
+}
+
+/*menu hamburguesa */
+.navbar-toggler {
+  color: #fff !important;
+}
+
+/* Estilos del iconos carrito y notificaciones */
+i {
+  color: #ffffff !important;
+  font-size: 1rem;
+  padding: .5rem !important;
+  border-radius: 1rem;
+  border-color: #000000;
+
+}
+
+/*estilos de flechitas de menu desplegables en iconos*/
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: .255em;
+  vertical-align: middle;
+  content: "";
+  border-top: .3em solid;
+  border-right: .3em solid transparent;
+  border-left: .3em solid transparent;
+  color: #fff;
+
+}
+
+/*img de usario*/
+#img_princ {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*estilos del nombre de usuario*/
+#username {
+  color: #ffffff;
+  padding: .3rem;
+  margin-right: 1rem;
+}
+
+/*FIN ESTILOS NAVBAR*/
+
+/* Modo Día sería la página por defecto */
+
+.card-title h5 {
+  color: black;
+}
+
+/* Modo Noche */
+
+
+body.night-mode label{
+color: white;
+}
+
+body.dark-mode {
+  background-color:#121212 ;
+  color: #cfcdcd; 
+}
+
+body.dark-mode .list-group-item {
+  background-color:#292a2b;
+  color: white;
+}
+body.dark-mode img{
+  filter: brightness(0.8);
+}
+
+body.dark-mode .card{
+  background-color: #292a2b;
+  border-color: rgb(177, 177, 177);
+}
+.dark-mode #button-background-index{
+  background-color: #292a2b !important;
+  color: white;
+  }
+
+.wrapper {
+  padding-top: 40px;
+  text-align: center;
+}
+
+/* Estilos del toggle - Modo día */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  padding: 4px;  
+  border-radius: 40px;
+}
+
+.toggle-bg {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 100%;  
+  height: 100%;
+  background-color: #C0E6F6; /* color del fondo del toggle */
+  border-radius: 40px;
+  border: 4px solid #81C0D5; /* color del borde */
+  transition: all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.toggle-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  height: 100%;
+  border-radius: 40px;
+  z-index: 2;
+  opacity: 0;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-left: 50px;
+  background-color: #F5EB42; /* color del sol interior */
+  border: 4px solid #E4C74D; /* color del sol exterior */
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+/* Modo noche */
+.toggle-switch-figureAlt {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFDF2; /* color interior de la luna */
+  border: 4px solid #DEE1C5; /* color exterior de la luna */
+  border-radius: 50%;
+  box-shadow: 
+    42px -7px 0 -3px #FCFCFC,
+    75px -10px 0 -3px #FCFCFC,
+    54px 4px 0 -4px #FCFCFC,
+    83px 7px 0 -2px #FCFCFC,
+    63px 18px 0 -4px #FCFCFC,
+    44px 28px 0 -2px #FCFCFC,
+    78px 23px 0 -3px #FCFCFC;
+  transform: scale(0);
+  transition: all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+/* Modo Noche */
+.toggle-input:checked ~ .toggle-switch {
+  margin-left: 0;
+  border-color: #DEE1C5;
+  background-color: #FFFDF2; /* luna */
+}
+
+.toggle-input:checked ~ .toggle-bg {
+  background-color: #484848; 
+  border-color: #202020;
+}
+
+.toggle-input:checked ~ .toggle-switch .toggle-switch-figure {
+  margin-left: 40px;
+  opacity: 0;
+  transform: scale(0.1);
+}

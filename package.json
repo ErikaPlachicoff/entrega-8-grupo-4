@@ -1,0 +1,16 @@
+{
+  "name": "ecomercio-grupo4-main",
+  "version": "1.0.0",
+  "description": "Este es el proyecto e-commerce del grupo 4, integrado por Erika Plachicoff, Camila Marcote, Clohe Blanc, Agustina Delgado y Selene Echartea. ¡Espero que les guste el progreso!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  }
+}

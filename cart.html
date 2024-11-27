@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Mi Carrito</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+  <main>
+
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Mi Carrito</h1>
+    </div>
+    <div id="cart-container" class="row">
+      <!--El contenido dinámico se cargará aquí desde JavaScript-->
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="categories.html" class="btn btn-primary">Seguir comprando</a>
+      <button id="checkoutButton" class="btn btn-success">Comprar</button>
+    </div>
+
+    <!-- Modal para comprar -->
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="purchaseModalLabel">Completa tu compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="purchaseForm">
+              <div class="mb-3">
+                <label for="name" class="form-label" id="subtitle">Nombre Completo</label>
+                <input type="text" class="form-control" id="name" required placeholder="Escribe tu nombre completo">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label" id="subtitle">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" required placeholder="Escribe tu email">
+              </div>
+              <div class="mb-3">
+                <label for="deliveryMethod" class="form-label" id="subtitle">Método de envío</label>
+                <select class="form-select" id="deliveryMethod" required>
+                  <option value="" disabled selected>Selecciona un tipo de envío</option>
+                  <option value="premiumvalue">Premium (2 a 5 días) </option>
+                  <option value="expressvalue">Express (5 a 8 días) </option>
+                  <option value="standardvalue">Standard (12 a 15 días) </option>
+                </select>
+              </div>
+              <!-- Nueva sección con la dirección de envío -->
+              <div class="mb-3">
+                <label class="form-label" id="subtitle">Dirección de Envío</label>
+                <div class="mb-2">
+                  <label for="department" class="form-label">Departamento</label>
+                  <input type="text" class="form-control" id="department" required
+                    placeholder="Escribe el departamento de residencia">
+                </div>
+                <div class="mb-2">
+                  <label for="locality" class="form-label">Localidad</label>
+                  <input type="text" class="form-control" id="locality" required placeholder="Escribe la localidad">
+                </div>
+                <div class="mb-2">
+                  <label for="street" class="form-label">Calle</label>
+                  <input type="text" class="form-control" id="street" required placeholder="Escribe la calle principal">
+                </div>
+                <div class="mb-2">
+                  <label for="number" class="form-label">Nro. </label>
+                  <input type="number" class="form-control" id="number" min="0" step="1" required
+                    placeholder="Escribe el numero de puerta">
+                </div>
+                <div class="mb-2">
+                  <label for="esq" class="form-label">Esquina</label>
+                  <input type="text" class="form-control" id="esq" required placeholder="Escribe la esquina">
+                </div>
+                <div class="mb-2">
+                  <label for="generalInfo">Especificaciones:</label>
+                  <textarea id="generalInfo" name="generalInfo" rows="4" cols="40" maxlength="400"
+                    placeholder="Brinde más información sobre su dirección aquí"></textarea>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="contact" class="form-label" id="subtitle">Teléfono de Contacto</label>
+                <input type="number" class="form-control" id="contact" min="0" step="1" required
+                  placeholder="Escriba su numero de teléfono">
+              </div>
+              <div class="mb-3">
+                <label for="paymentMethod" class="form-label" id="subtitle">Método de Pago</label>
+                <select class="form-select" id="paymentMethod" required>
+                  <option value="" disabled selected>Selecciona un método de pago</option>
+                  <option value="creditdebitCard">Tarjeta de Débito/Crédito</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="bankTransfer">Transferencia Bancaria</option>
+                </select>
+                <div class="col-6">
+                  <h6><strong>Subtotal:</strong> $<span id="cart-subtotal">0.00</span></h6>
+                  <h6><strong>Envío:</strong> $<span id="cart-shipping">0.00</span></h6>
+                  <hr class="custom-line my-4 mx-auto">
+                  <p><strong>Total:</strong> $<span id="cart-total">0.00</span></p>
+                </div>
+
+                <div class="send-button-modal text-end">
+                  <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+
+
+
+  <div id="spinner-wrapper">
+
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
+</html>
