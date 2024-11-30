@@ -4,29 +4,41 @@ document.getElementById("login-form")?.addEventListener("submit", function(event
     
     // Toma los valores del formulario
     const email = document.getElementById('form2Example11').value;
-   
-    // Inicializa el array de usuarios si no existe
-    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const password = document.getElementById('form2Example22').value; 
     
-    // Añade el nuevo usuario (esto no es seguro para contraseñas)
-    usuarios.push({email: email});
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    
-    // Guardar el estado de autenticación en localStorage
-    localStorage.setItem('authenticated', 'true');
-    localStorage.setItem('currentUser', email);
+    // Envia los datos de login al servidor
+    fetch('http://localhost:3000/user', { 
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === "Usuario creado exitosamente.") {
 
-    // Redirigir a la portada
-    window.location.href = "index.html";
+            localStorage.setItem('authenticated', 'true');
+            localStorage.setItem('currentUser', email);
+            
+            // Redirigir a la portada
+            window.location.href = "index.html";
+        } else {
+            alert('Error al crear usuario: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error al enviar los datos:', error);
+    });
 });
 
-// Cargar el nombre del usuario cuando el documento esté listo
+// Carga el nombre del usuario cuando el documento esté listo
 document.addEventListener("DOMContentLoaded", function() {
     console.log('DOMContentLoaded ejecutado');
     // Recupera el nombre del usuario desde localStorage
     const currentUser = localStorage.getItem('currentUser');
     
-    // Asegúrate de que el elemento con id "username" esté presente
+
     const usernameElement = document.getElementById('username');
     if (usernameElement) {
         if (currentUser) {

@@ -4,7 +4,8 @@
   "description": "Este es el proyecto e-commerce del grupo 4, integrado por Erika Plachicoff, Camila Marcote, Clohe Blanc, Agustina Delgado y Selene Echartea. ¡Espero que les guste el progreso!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon backend/server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,9 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.11.4"
+    "mysql2": "^3.11.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
